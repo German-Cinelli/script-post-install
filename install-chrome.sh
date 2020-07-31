@@ -10,9 +10,9 @@ if [ $system_architecture = "x86_64" ]; then
     
 else
 
-    apt-get install chromium-browser -y;
+    apt-get install -y chromium-browser;
 
 fi
 
-echo -e -n "\e[0;32m> Accion finalizada. Presione ENTER para continuar\e[0m"
+echo -e -n "${GREEN}Accion finalizada. Presione ENTER para continuar."
 read n

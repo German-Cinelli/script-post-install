@@ -4,12 +4,6 @@ system_architecture=$(uname -m)
 
 #TEAMVIEWER
 if [ $system_architecture = "x86_64" ]; then
-    #if [$(which teamviewer = "");]; then
-        #wget /home/ceip/Descargas https://download.teamviewer.com/download/linux/teamviewer_amd64.deb;
-        #dpkg -i /home/ceip/Descargas/teamviewer;
-    #else
-
-    #fi
 
     wget /home/ceip/Descargas https://download.teamviewer.com/download/linux/teamviewer_amd64.deb;
     dpkg -i /home/ceip/Descargas/teamviewer;
@@ -21,5 +15,5 @@ else
     
 fi
 
-echo -e -n "\e[0;32m> Accion finalizada. Presione ENTER para continuar\e[0m"
+echo -e -n "${GREEN}Accion finalizada. Presione ENTER para continuar."
 read n

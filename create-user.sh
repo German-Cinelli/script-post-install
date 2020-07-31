@@ -7,15 +7,23 @@ clear
 if [ "$exist_user" == "" ]
 then
     sudo useradd -d /home/usuario -mk /etc/skel -s /bin/bash usuario;
-    passwd usuario;
-    echo -e -n "\e[0;32m> Usuario creado exitosamente. \e[0m"
-    sleep 1
-    echo -e -n "\n\033[1;33m Ahora sin salir de esta terminal... \e[0m"
-    echo -e -n "\n\033[1;33m Es necesario logease con ese usuario\033[0;32m desde otra terminal\033[1;33m con... \e[0m"
-    echo -e "\n\e[0;32m > sudo usuario\e[0m"
-    echo -e -n "\n\e[0;32m> Una vez realizada dicha accion, presione ENTER para volver al menu y configurar samba\e[0m"
-    read n
+    if [ $? == 0 ]
+	then
+		passwd usuario;
+        echo -e "${GREEN}Usuario creado exitosamente."
+        sleep 1
+        echo -e "${WHITE}Ahora sin salir de esta terminal..."
+        echo -e "${WHITE}Es necesario logease con ese usuario ${CYAN}desde otra terminal ${WHITE}ejecutando..."
+        echo -e "${GREEN}> ${WHITE}sudo usuario"
+        echo -e "${WHITE}Luego de logearse cerrar la terminal."
+        echo -e -n "${WHITE}Una vez realizada dicha accion, presione ENTER para volver al menu y configurar samba"
+        read n
+	else
+		echo -e "${RED}[x] ${WHITE}Se produjo un error inesperado al crear el usuario."
+        sleep 3;
+	fi
+    
 else
-    echo -e "\n\e[0;36m [x] El usuario 'usuario' ya existe!\e[0m"
+    echo -e "${RED}[x] ${WHITE}El usuario 'usuario' ya existe!"
     sleep 2;
 fi

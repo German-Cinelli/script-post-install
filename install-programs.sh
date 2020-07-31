@@ -42,21 +42,5 @@ sudo apt install -y xsane;
 #xsane
 sudo apt install -y system-config-samba;
 
-#CHROME
-#TEAMVIEWER
-if [ $system_architecture = "x86_64" ]; then
-    #sudo wget -P /home/ceip/Descargas https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
-    #sudo apt-get update
-    #sudo dpkg -i /home/ceip/Descargas/google*;
-    #wget -P /home/ceip/Descargas https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-    #sudo apt-get update
-    #sudo dpkg -i /home/ceip/Descargas/teamviewer*;
-else
-    #sudo apt-get install chromium-browser -y;
-    #sudo wget -P /home/ceip/Descargas https://download.teamviewer.com/download/linux/teamviewer_i386.deb;
-    #sudo apt-get update
-    #sudo dpkg -i /home/ceip/Descargas/teamviewer*;
-fi
-
-echo -e -n "\e[0;32m> Accion finalizada. Presione ENTER para continuar\e[0m"
+echo -e -n "${GREEN}Accion finalizada. Presione ENTER para continuar."
 read n
